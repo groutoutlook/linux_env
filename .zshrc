@@ -154,7 +154,7 @@ alias repro="reloadProfile"
 reloadProfile(){
  cp ~/linux_env/.zshrc ~/.zshrc && source ~/.zshrc && echo "success reloadProfile."
 }
-
+alias j="jnl"
 jnl(){
   echo $@ >> $jrnlpath
 }
