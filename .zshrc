@@ -143,10 +143,24 @@ export andstorage="/storage/emulated/0"
 export jrnlpath="${andstorage}/Note/Journal.md"
 
 cd-(){
-  cd -
+  for i in {1..$1}
+  do
+    cd -
+  done
 }
 cd..(){
-  ..
+  for i in {1..$1}
+  do
+    ..
+  done
+}
+alias :Q=":q"
+:q(){
+ exit
+}
+alias :A=":a"
+:a(){
+  reloadProfile
 }
 #reload Profile
 alias repro="reloadProfile"
@@ -154,17 +168,22 @@ reloadProfile(){
  cp ~/linux_env/.zshrc ~/.zshrc && source ~/.zshrc && echo "success reloadProfile."
 }
 alias j="jnl"
+alias J="jnl"
 jnl(){
   echo $@ >> $jrnlpath
 }
-
+alias OS:="os:"
 os:(){
-  query = "" 
+  local query="" 
 	for arg in "$@"
 	do
-		query=$query+"%20"
+		query="${query}${arg}%20"
 	done
- xdg-open "obsidian://omnisearch?query=$query"
+ xdg-open "obsidian://omnisearch?query=${query}"
+}
+
+nvimconf(){
+  nvim /data/data/com.termux/files/home/.config/nvim/
 }
 
 
