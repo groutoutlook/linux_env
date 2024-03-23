@@ -181,7 +181,9 @@ os:(){
 	done
  xdg-open "obsidian://omnisearch?query=${query}"
 }
-
+osj(){
+  xdg-open "obsidian://omnisearch?Journal"
+}
 nvimconf(){
   nvim /data/data/com.termux/files/home/.config/nvim/
 }
