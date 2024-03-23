@@ -172,7 +172,7 @@ alias J="jnl"
 jnl(){
   echo $@ >> $jrnlpath
 }
-alias OS:="os:"
+alias obs="os:"
 os:(){
   local query="" 
 	for arg in "$@"
