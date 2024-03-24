@@ -97,28 +97,6 @@ export LANG=en_US.UTF-8
 alias cls='clear'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-
-transfer() {
-  curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename "$1") | pbcopy;
-  echo "1) Download link:"
-  echo "$(pbpaste)"
-
-  echo n2) Linux or macOS download command:"
-  linux_macos_download_command="wget $(pbpaste)"
-  echo $linux_macos_download_command
-
-  echo n3) Windows download command:"
-  windows_download_command="Invoke-WebRequest -Uri "$(pbpaste)" -OutFile $(basename $1)"
-  echo $windows_download_command
-
-  case $2 in
-    l|m)  echo $linux_macos_download_command | pbcopy
-    ;;
-    w)  echo $windows_download_command | pbcopy
-    ;;
-  esac
-}
-
 gos(){
 	origin_query="https://www.google.com/search?q="
 	query=$origin_query
@@ -176,6 +154,7 @@ jnl(){
   local final_string=""
   local time_date=$(date "+%F %r")
   local jrnl_path=$jrnlpath
+  echo $1
   case $1 in 
     1688)
      jrnl_path="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
