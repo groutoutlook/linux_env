@@ -177,8 +177,8 @@ jnl(){
 	do
 		  final_string="${final_string}${arg} "
 	done
-
-  echo "[${time_date}] ${finalstring}" >> $jrnlpath
+  
+  echo "[${time_date}] ${final_string}\n" >> $jrnlpath
 }
 alias obs="os:"
 os:(){
