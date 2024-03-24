@@ -103,11 +103,11 @@ transfer() {
   echo "1) Download link:"
   echo "$(pbpaste)"
 
-  echo "\n2) Linux or macOS download command:"
+  echo n2) Linux or macOS download command:"
   linux_macos_download_command="wget $(pbpaste)"
   echo $linux_macos_download_command
 
-  echo "\n3) Windows download command:"
+  echo n3) Windows download command:"
   windows_download_command="Invoke-WebRequest -Uri "$(pbpaste)" -OutFile $(basename $1)"
   echo $windows_download_command
 
@@ -140,7 +140,6 @@ export FZF_DEFAULT_COMMAND='fd';
 PATH="/data/data/com.termux/files/home/go/bin:$PATH"
 PATH="/data/data/com.termux/files/home/.local/bin:$PATH"
 export andstorage="/storage/emulated/0"
-export jrnlpath="${andstorage}/Note/Journal.md"
 
 cd-(){
   for i in {1..$1}
@@ -169,16 +168,79 @@ reloadProfile(){
 }
 alias j="jnl"
 alias J="jnl"
+export jrnlpath="${andstorage}/Note/Journal.md"
+export defaultVault="${andstorage}/Note"
 jnl(){
-  
   local final_string=""
   local time_date=$(date "+%F %r")
+  local jrnl_path=""
+  
+
+  case $1 in 
+    1688)
+     jrnl_path="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
+      ;;
+    taobao)
+     jrnl_path="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
+      ;;
+    item)
+     jrnl_path="${defaultVault}/1_Markdown/note_Items/OtherItemsJournal.md"
+      ;;
+    asset)
+      jrnl_path="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
+      ;;
+    place)
+      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/note_Places/PlacesJournal.md"
+      ;;
+    work)
+      jrnl_path="${defaultVault}/1_Markdown/note_Business/WorkJournal.md"
+      ;;
+    lang)
+      jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/LangJournal.md"
+      ;;
+    prog)
+      jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/ProgrammingJournal.md"
+      ;;
+    comp)
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/ComponentJournal.md"
+      ;;
+    kicad)
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
+      ;;
+    eda)
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
+      ;;
+    hard)
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
+      ;;
+    hw)
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
+      ;;
+    soft)
+      jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
+      ;;
+    sw)
+      jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
+      ;;
+    acro)
+      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
+      ;;
+    *)
+      jrnl_path=$jrnlpath
+      ;;
+  esac
+      
+
+
+
+
+
   for arg in "$@"
 	do
 		  final_string="${final_string}${arg} "
 	done
   
-  echo "[${time_date}] ${final_string}\n" >> $jrnlpath
+  echo "[${time_date}] ${final_string}\n" >> $jrnl_path
 }
 alias obs="os:"
 os:(){
