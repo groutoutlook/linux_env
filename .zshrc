@@ -154,63 +154,60 @@ jnl(){
   local final_string=""
   local time_date=$(date "+%F %r")
   local jrnl_path=$jrnlpath
-  echo $1
   case $1 in 
-    1688)
+    "1688")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
       ;;
-    taobao)
+    "taobao")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
       ;;
-    item)
+    "item")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/OtherItemsJournal.md"
       ;;
-    asset)
+    "asset")
       jrnl_path="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
       ;;
-    place)
+    "place")
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/note_Places/PlacesJournal.md"
       ;;
-    work)
+    "work")
       jrnl_path="${defaultVault}/1_Markdown/note_Business/WorkJournal.md"
       ;;
-    lang)
+    "lang")
       jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/LangJournal.md"
       ;;
-    prog)
+    "prog")
       jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/ProgrammingJournal.md"
       ;;
-    comp)
+    "comp")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/ComponentJournal.md"
       ;;
-    kicad)
+    "kicad")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
       ;;
-    eda)
+    "eda")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
       ;;
-    hard)
+    "hard")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
       ;;
-    hw)
+    "hw")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
       ;;
-    soft)
+    "soft")
       jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
       ;;
-    sw)
+    "sw")
       jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
       ;;
-    acro)
+    "acro")
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
       ;;
-    *)
+    "*")
       jrnl_path=$jrnlpath
       ;;
   esac
   $1=""
-
-
 
   for arg in "$@"
 	do
