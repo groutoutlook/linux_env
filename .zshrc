@@ -172,13 +172,13 @@ alias J="jnl"
 jnl(){
   
   local final_string=""
-  local time_date = $(date +%d.%m.%y-%H:%M:%S)
+  local time_date=$(date +%d.%m.%y-%H:%M:%S)
   for arg in "$@"
 	do
 		  final_string="${final_string}${arg} "
 	done
 
-  echo "${time_date}${finalstring}" >> $jrnlpath
+  echo "[${time_date}] ${finalstring}" >> $jrnlpath
 }
 alias obs="os:"
 os:(){
