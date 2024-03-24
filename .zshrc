@@ -170,7 +170,15 @@ reloadProfile(){
 alias j="jnl"
 alias J="jnl"
 jnl(){
-  echo $@ >> $jrnlpath
+  
+  local final_string=""
+  local time_date = $(date +%d.%m.%y-%H:%M:%S)
+  for arg in "$@"
+	do
+		  final_string="${final_string}${arg} "
+	done
+
+  echo "${time_date}${finalstring}" >> $jrnlpath
 }
 alias obs="os:"
 os:(){
