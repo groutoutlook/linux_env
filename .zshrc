@@ -172,7 +172,7 @@ alias J="jnl"
 jnl(){
   
   local final_string=""
-  local time_date=$(date +%F %r)
+  local time_date=$(date "+%F %r")
   for arg in "$@"
 	do
 		  final_string="${final_string}${arg} "
