@@ -154,76 +154,77 @@ jnl(){
   local final_string=""
   local time_date=$(date "+%F %r")
   local jrnl_path=$jrnlpath
+  local temp_count=0
   case $1 in 
     "1688")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
-  $1=""
+  temp_count=1
       ;;
     "taobao")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "item")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/OtherItemsJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "asset")
       jrnl_path="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
       ;;
     "place")
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/note_Places/PlacesJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "work")
       jrnl_path="${defaultVault}/1_Markdown/note_Business/WorkJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "lang")
       jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/LangJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "prog")
       jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/ProgrammingJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "comp")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/ComponentJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "kicad")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "eda")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "hard")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "hw")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "soft")
       jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "sw")
       jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "acro")
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
-  $1=""
+  temp_count=1
       ;;
     "*")
       jrnl_path=$jrnlpath
       ;;
   esac
 
-  for arg in "$@"
+  for arg in "${@:$temp_count}"
 	do
 		  final_string="${final_string}${arg} "
 	done
