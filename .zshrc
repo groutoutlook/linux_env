@@ -158,69 +158,70 @@ jnl(){
   case $1 in 
     "1688")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "taobao")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "item")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/OtherItemsJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "asset")
       jrnl_path="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
       ;;
     "place")
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/note_Places/PlacesJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "work")
       jrnl_path="${defaultVault}/1_Markdown/note_Business/WorkJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "lang")
       jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/LangJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "prog")
       jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/ProgrammingJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "comp")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/ComponentJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "kicad")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "eda")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "hard")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "hw")
       jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "soft")
       jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "sw")
       jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "acro")
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
-  temp_count=1
+  temp_count=2
       ;;
     "*")
       jrnl_path=$jrnlpath
+      temp_count=1
       ;;
   esac
 
