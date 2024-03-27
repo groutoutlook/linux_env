@@ -97,28 +97,6 @@ export LANG=en_US.UTF-8
 alias cls='clear'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-
-transfer() {
-  curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename "$1") | pbcopy;
-  echo "1) Download link:"
-  echo "$(pbpaste)"
-
-  echo n2) Linux or macOS download command:"
-  linux_macos_download_command="wget $(pbpaste)"
-  echo $linux_macos_download_command
-
-  echo n3) Windows download command:"
-  windows_download_command="Invoke-WebRequest -Uri "$(pbpaste)" -OutFile $(basename $1)"
-  echo $windows_download_command
-
-  case $2 in
-    l|m)  echo $linux_macos_download_command | pbcopy
-    ;;
-    w)  echo $windows_download_command | pbcopy
-    ;;
-  esac
-}
-
 gos(){
 	origin_query="https://www.google.com/search?q="
 	query=$origin_query
@@ -140,6 +118,8 @@ export FZF_DEFAULT_COMMAND='fd';
 PATH="/data/data/com.termux/files/home/go/bin:$PATH"
 PATH="/data/data/com.termux/files/home/.local/bin:$PATH"
 export andstorage="/storage/emulated/0"
+export defaultVault="${andstorage}/Note"
+export jrnlpath="${andstorage}/Note/Journal.md"
 
 cd-(){
   for i in {1..$1}
@@ -174,8 +154,78 @@ jnl(){
   local final_string=""
   local time_date=$(date "+%F %r")
   local jrnl_path=$jrnlpath
-  
-  for arg in "$@"
+  local temp_count=0
+  case $1 in 
+    "1688")
+     jrnl_path="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
+  temp_count=2
+      ;;
+    "taobao")
+     jrnl_path="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
+  temp_count=2
+      ;;
+    "item")
+     jrnl_path="${defaultVault}/1_Markdown/note_Items/OtherItemsJournal.md"
+  temp_count=2
+      ;;
+    "asset")
+      jrnl_path="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
+      ;;
+    "place")
+      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/note_Places/PlacesJournal.md"
+  temp_count=2
+      ;;
+    "work")
+      jrnl_path="${defaultVault}/1_Markdown/note_Business/WorkJournal.md"
+  temp_count=2
+      ;;
+    "lang")
+      jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/LangJournal.md"
+  temp_count=2
+      ;;
+    "prog")
+      jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/ProgrammingJournal.md"
+  temp_count=2
+      ;;
+    "comp")
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/ComponentJournal.md"
+  temp_count=2
+      ;;
+    "kicad")
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
+  temp_count=2
+      ;;
+    "eda")
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
+  temp_count=2
+      ;;
+    "hard")
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
+  temp_count=2
+      ;;
+    "hw")
+      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
+  temp_count=2
+      ;;
+    "soft")
+      jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
+  temp_count=2
+      ;;
+    "sw")
+      jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
+  temp_count=2
+      ;;
+    "acro")
+      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
+  temp_count=2
+      ;;
+    "*")
+      jrnl_path=$jrnlpath
+      temp_count=1
+      ;;
+  esac
+
+  for arg in "${@:$temp_count}"
 	do
 		  final_string="${final_string}${arg} "
 	done
