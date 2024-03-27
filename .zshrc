@@ -219,6 +219,18 @@ jnl(){
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
   temp_count=2
       ;;
+    "vocab")
+      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/VocabJournal.md"
+  temp_count=2
+      ;;
+    "wf")
+      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
+  temp_count=2
+      ;;
+    "flow")
+      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
+  temp_count=2
+      ;;
     "*")
       jrnl_path=$jrnlpath
       temp_count=1
