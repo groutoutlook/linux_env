@@ -141,6 +141,10 @@ alias :A=":a"
 :a(){
   reloadProfile
 }
+alias :v="nvimhere"
+nvimhere(){
+  nvim .
+}
 #reload Profile
 alias repro="reloadProfile"
 reloadProfile(){
@@ -242,7 +246,7 @@ jnl(){
 		  final_string="${final_string}${arg} "
 	done
   
-  echo "[${time_date}] ${final_string}\n" >> $jrnl_path
+  echo "\n[${time_date}] ${final_string}\n" >> $jrnl_path
 }
 alias obs="os:"
 os:(){
