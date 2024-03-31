@@ -97,15 +97,6 @@ export LANG=en_US.UTF-8
 alias cls='clear'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-gos(){
-	origin_query="https://www.google.com/search?q="
-	query=$origin_query
-	for arg in "$@"
-	do
-		query=$query+$arg
-	done
-	w3m $query #need w3m.
-}
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -134,9 +125,11 @@ cd..(){
   done
 }
 alias :Q=":q"
+alias qqq=":q"
 :q(){
  exit
 }
+
 alias :A=":a"
 :a(){
   reloadProfile
@@ -249,6 +242,7 @@ jnl(){
   echo "\n[${time_date}] ${final_string}\n" >> $jrnl_path
 }
 alias obs="os:"
+alias :o="os:"
 os:(){
   local query="" 
 	for arg in "$@"
@@ -259,6 +253,16 @@ os:(){
 }
 osj(){
   xdg-open "obsidian://omnisearch?Journal"
+}
+alias gg="gos"
+gos(){
+	origin_query="https://www.google.com/search?q="
+	query=$origin_query
+	for arg in "$@"
+	do
+		query=$query+$arg
+	done
+	xdg-open $query #need w3m.
 }
 nvimconf(){
   nvim /data/data/com.termux/files/home/.config/nvim/
