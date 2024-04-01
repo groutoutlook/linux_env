@@ -228,18 +228,28 @@ jnl(){
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
   temp_count=2
       ;;
+    "default")
+      jrnl_path=$jrnlpath
+      temp_count=2
+      ;;
     "*")
       jrnl_path=$jrnlpath
-      temp_count=1
+      temp_count=2
       ;;
   esac
 
-  for arg in "${@:$temp_count}"
-	do
-		  final_string="${final_string}${arg} "
-	done
-  
-  echo "\n[${time_date}] ${final_string}\n" >> $jrnl_path
+  if [ $# -gt 2 ]
+  then 
+    for arg in "${@:$temp_count}"
+	  do
+		    final_string="${final_string}${arg} "
+	  done
+    echo "\n[${time_date}] ${final_string}\n" >> $jrnl_path
+  else
+    # echo "this opens nvim"
+    echo "\n[${time_date}] " >> $jrnl_path
+    nvim $jrnl_path -c startinsert 
+  fi 
 }
 alias obs="os:"
 alias :o="os:"
