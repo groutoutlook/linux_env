@@ -145,7 +145,7 @@ reloadProfile(){
 }
 alias j="jnl"
 alias J="jnl"
-export jrnlpath="${andstorage}/Note/Journal.md"
+export jrnlpath="${andstorage}/Note/MainJournal.md"
 export defaultVault="${andstorage}/Note"
 jnl(){
   local final_string=""
