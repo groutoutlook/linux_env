@@ -248,7 +248,7 @@ jnl(){
   else
     # echo "this opens nvim"
     echo "\n[${time_date}] " >> $jrnl_path
-    nvim $jrnl_path -c startinsert 
+    nvim $jrnl_path -c $ -c startinsert!
   fi 
 }
 alias obs="os:"
