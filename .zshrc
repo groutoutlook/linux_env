@@ -142,6 +142,7 @@ nvimhere(){
 alias repro="reloadProfile"
 reloadProfile(){
  cp ~/linux_env/.zshrc ~/.zshrc && source ~/.zshrc && echo "success reloadProfile."
+ cd ~/.config/nvim && git pull && cd -
 }
 alias j="jnl"
 alias J="jnl"
