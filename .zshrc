@@ -239,7 +239,7 @@ jnl(){
       ;;
   esac
 
-  if [ $# -gt 2 ]
+  if [ $# -gt 2 ];
   then 
     for arg in "${@:$temp_count}"
 	  do
@@ -280,7 +280,13 @@ nvimconf(){
 }
 
 cst(){
+  if [ $1 -ne 0 ];
+  then
+  xdg-open https://codestats.net/users/groutlloyd
+  
+  else
   curl https://codestats.net/api/users/groutlloyd
+  fi
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
