@@ -279,7 +279,9 @@ nvimconf(){
   nvim /data/data/com.termux/files/home/.config/nvim/
 }
 
-
+cst(){
+  curl https://codestats.net/api/users/groutlloyd
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
