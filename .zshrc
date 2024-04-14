@@ -160,6 +160,7 @@ alias repro="reloadProfile"
 reloadProfile(){
   local nvim_dir="$HOME/.config/nvim"
   cp ~/linux_env/.zshrc ~/.zshrc && source ~/.zshrc && echo "success reloadProfile."
+
   echo nvim_dir
   git -C $nvim_dir pull 
 
@@ -168,23 +169,21 @@ alias j="jnl"
 alias J="jnl"
 export jrnlpath="${andstorage}/Note/MainJournal.md"
 export defaultVault="${andstorage}/Note"
+jrnlTable=(
+  [1688]="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
+  [taobao]="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
+  [asset]="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
+  )
 jnl(){
   local final_string=""
   local time_date=$(date "+%F %r")
   local jrnl_path=$jrnlpath
   case $1 in 
     "1688")
-     jrnl_path="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
-      ;;
     "taobao")
-     jrnl_path="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
-      ;;
-    "item")
-     jrnl_path="${defaultVault}/1_Markdown/note_Items/OtherItemsJournal.md"
-      ;;
     "asset")
-      jrnl_path="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
-      ;;
+      jrnlpath = $jrnlTable[$1]
+     ;;
     "place")
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/note_Places/PlacesJournal.md"
       ;;
