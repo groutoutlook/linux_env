@@ -261,7 +261,7 @@ jnl(){
   else
     # echo "this opens nvim"
     echo "\n[${time_date}] " >> $jrnl_path
-    nvim $jrnl_path -c "call feedkeys(Gzz) | startinsert!"
+    nvim $jrnl_path -+ -c "call feedkeys(zz)"
   fi 
 }
 alias obs="os:"
