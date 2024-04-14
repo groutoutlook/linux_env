@@ -133,7 +133,7 @@ alias qqq=":q"
 alias :A=":a"
 alias :az=":a zsh"
 :a(){
-local linux_env_dir="~linux_env"
+local linux_env_dir="~/linux_env"
 if [ $# -lt 1]; then
   reloadProfile
 elif [ $1 -eq "zsh"]; then 
