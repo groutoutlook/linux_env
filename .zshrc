@@ -136,7 +136,7 @@ alias :az=":a zsh"
 local linux_env_dir="$HOME/linux_env"
 if [ $# -lt 1 ]; then
   reloadProfile
-elif [ $1 -eq "zsh" ]; then 
+elif [ $1 = "zsh" ]; then 
   git -C $linux_env_dir pull 
   reloadProfile
 fi
@@ -148,9 +148,9 @@ alias :vs="nvimhere ls"
 nvimhere(){
   if [ $# -lt 1 ]; then
     nvim .
-  elif [ $1 -eq "last" ]; then
+  elif [ $1 = "last" ]; then
     nvim "lua required('resession').load 'Last Session'"
-  elif [ $1 -eq "ls" ]; then
+  elif [ $1 = "ls" ]; then
     nvim "lua required('resession').load()"
   fi
 }
