@@ -152,7 +152,6 @@ nvimhere(){
   elif [$1 -eq "ls"]; then
     nvim "lua required('resession').load()"
   fi
-end
 }
 #reload Profile
 alias repro="reloadProfile"
