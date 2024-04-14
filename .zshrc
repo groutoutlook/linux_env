@@ -171,8 +171,8 @@ export jrnlpath="${andstorage}/Note/MainJournal.md"
 export defaultVault="${andstorage}/Note"
 jrnlTable=(
   [1688]="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
-  [taobao]="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
-  [asset]="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
+  ["taobao"]="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
+  ["asset"]="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
   )
 jnl(){
   local final_string=""
