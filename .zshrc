@@ -136,7 +136,7 @@ alias :az=":a zsh"
 local linux_env_dir="~linux_env"
 if [ $# -lt 1]; then
   reloadProfile
-elif [ $1 -eq "zsh"] then 
+elif [ $1 -eq "zsh"]; then 
   git -C $linux_env_dir pull 
 fi
 }
