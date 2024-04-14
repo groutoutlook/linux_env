@@ -150,9 +150,9 @@ nvimhere(){
   if [ $# -lt 1 ]; then
     nvim .
   elif [ $1 = "last" ]; then
-    nvim "lua required('resession').load 'Last Session'"
+    nvim -c "lua required('resession').load 'Last Session'"
   elif [ $1 = "ls" ]; then
-    nvim "lua required('resession').load()"
+    nvim -c "lua required('resession').load()"
   fi
 }
 #reload Profile
