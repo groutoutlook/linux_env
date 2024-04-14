@@ -136,8 +136,18 @@ alias :A=":a"
 }
 alias :v="nvimhere"
 alias :V="nvimhere"
+alias :vl="nvimhere last"
+alias :vs="nvimhere ls"
 nvimhere(){
+  if [ $# -lt 1 ]; then
   nvim .
+  
+  elif [$1 -eq "last"]; then
+  nvim "lua required('resession').load 'Last Session'"
+
+  elif [$1 -eq "ls"]; then
+  fi
+end
 }
 #reload Profile
 alias repro="reloadProfile"
@@ -162,22 +172,18 @@ jnl(){
       ;;
     "item")
      jrnl_path="${defaultVault}/1_Markdown/note_Items/OtherItemsJournal.md"
-  
       ;;
     "asset")
       jrnl_path="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
       ;;
     "place")
       jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/note_Places/PlacesJournal.md"
-  
       ;;
     "work")
       jrnl_path="${defaultVault}/1_Markdown/note_Business/WorkJournal.md"
-  
       ;;
     "lang")
       jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/LangJournal.md"
-  
       ;;
     "prog")
       jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/ProgrammingJournal.md"
