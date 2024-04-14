@@ -133,7 +133,7 @@ alias qqq=":q"
 alias :A=":a"
 alias :az=":a zsh"
 :a(){
-local linux_env_dir="~/linux_env"
+local linux_env_dir="$HOME/linux_env"
 if [ $# -lt 1]; then
   reloadProfile
 elif [ $1 -eq "zsh"]; then 
@@ -156,10 +156,11 @@ nvimhere(){
 #reload Profile
 alias repro="reloadProfile"
 reloadProfile(){
-  local nvim_dir="~/.config/nvim"
+  local nvim_dir="$HOME/config/nvim"
   cp ~/linux_env/.zshrc ~/.zshrc && source ~/.zshrc && echo "success reloadProfile."
  
   git -C $nvim_dir pull 
+
 }
 alias j="jnl"
 alias J="jnl"
