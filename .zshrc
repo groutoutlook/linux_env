@@ -137,6 +137,7 @@ local linux_env_dir="$HOME/linux_env"
 if [ $# -lt 1 ]; then
   reloadProfile
 elif [ $1 = "zsh" ]; then 
+  echo "linux_env_dir"
   git -C $linux_env_dir pull 
   reloadProfile
 fi
@@ -159,7 +160,7 @@ alias repro="reloadProfile"
 reloadProfile(){
   local nvim_dir="$HOME/.config/nvim"
   cp ~/linux_env/.zshrc ~/.zshrc && source ~/.zshrc && echo "success reloadProfile."
- 
+  echo nvim_dir
   git -C $nvim_dir pull 
 
 }
