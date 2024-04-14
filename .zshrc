@@ -146,12 +146,11 @@ alias :vl="nvimhere last"
 alias :vs="nvimhere ls"
 nvimhere(){
   if [ $# -lt 1 ]; then
-  nvim .
-  
+    nvim .
   elif [$1 -eq "last"]; then
-  nvim "lua required('resession').load 'Last Session'"
-
+    nvim "lua required('resession').load 'Last Session'"
   elif [$1 -eq "ls"]; then
+    nvim "lua required('resession').load()"
   fi
 end
 }
