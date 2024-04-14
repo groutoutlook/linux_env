@@ -156,7 +156,7 @@ nvimhere(){
 #reload Profile
 alias repro="reloadProfile"
 reloadProfile(){
-  local nvim_dir="$HOME/config/nvim"
+  local nvim_dir="$HOME/.config/nvim"
   cp ~/linux_env/.zshrc ~/.zshrc && source ~/.zshrc && echo "success reloadProfile."
  
   git -C $nvim_dir pull 
