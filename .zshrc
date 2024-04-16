@@ -173,83 +173,38 @@ jrnlTable=(
   [1688]="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
   ["taobao"]="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
   ["asset"]="${defaultVault}/1_Markdown/note_Items/AssetJournal.md"
+  ["place"]="${defaultVault}/1_Markdown/note_Knowledge/note_Places/PlacesJournal.md"
+  ["work"]="${defaultVault}/1_Markdown/note_Business/WorkJournal.md"
+  ["lang"]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/LangJournal.md"
+  ["prog"]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/ProgrammingJournal.md"
+  ["comp"]="${defaultVault}/1_Markdown/note_Embedded/ComponentJournal.md"
+  ["kicad"]="${defaultVault}/1_Markdown/note_Embedded/EDAJournal.md"
+  ["eda"]="${defaultVault}/1_Markdown/note_Embedded/EDAJournal.md"
+  ["hw"]="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
+  ["hard"]="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
+  ["sw"]="${defaultVault}/1_Markdown/note_software/SoftwareJournal.md"
+  ["soft"]="${defaultVault}/1_Markdown/note_software/SoftwareJournal.md"
+  ["acro"]="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
+  ["vocab"]="${defaultVault}/1_Markdown/note_Knowledge/VocabJournal.md"
+  ["flow"]="${defaultVault}/1_Markdown/note_Business/WorkflowJournal.md"
+  ["wf"]="${defaultVault}/1_Markdown/note_Business/WorkflowJournal.md"
+  ["workflow"]="${defaultVault}/1_Markdown/note_Business/WorkflowJournal.md"
+  ["phr"]="${defaultVault}/1_Markdown/note_Knowledge/PhraseJournal.md"
+  ["phrase"]="${defaultVault}/1_Markdown/note_Knowledge/PhraseJournal.md"
+  ["ev"]="${defaultVault}/1_Markdown/note_Knowledge/EventJournal.md"
+  ["event"]="${defaultVault}/1_Markdown/note_Knowledge/EventJournal.md"
+  ["math"]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/STEMJournal.md"
+  ["physic"]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/STEMJournal.md"
+  ["stem"]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/STEMJournal.md"
+  ["til"]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/OtherKnowledgeJournal.md"
+  ["other"]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/OtherKnowledgeJournal.md"
+  ["acc"]="${defaultVault}/1_Markdown/note_software/0_LongJournal/AccountJournal.md"
   )
 jnl(){
   local final_string=""
   local time_date=$(date "+%F %r")
-  local jrnl_path=$jrnlpath
-  case $1 in 
-    "1688")
-    "taobao")
-    "asset")
-      jrnlpath = $jrnlTable[$1]
-     ;;
-    "place")
-      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/note_Places/PlacesJournal.md"
-      ;;
-    "work")
-      jrnl_path="${defaultVault}/1_Markdown/note_Business/WorkJournal.md"
-      ;;
-    "lang")
-      jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/LangJournal.md"
-      ;;
-    "prog")
-      jrnl_path="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/ProgrammingJournal.md"
-  
-      ;;
-    "comp")
-      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/ComponentJournal.md"
-  
-      ;;
-    "kicad")
-      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
-  
-      ;;
-    "eda")
-      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/note_EDA/EDAJournal.md"
-  
-      ;;
-    "hard")
-      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
-  
-      ;;
-    "hw")
-      jrnl_path="${defaultVault}/1_Markdown/note_Embedded/HardwareJournal.md"
-  
-      ;;
-    "soft")
-      jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
-  
-      ;;
-    "sw")
-      jrnl_path="${defaultVault}/1_Markdown/note_software/0_LongJournal/SoftwareJournal.md"
-  
-      ;;
-    "acro")
-      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
-  
-      ;;
-    "vocab")
-      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/VocabJournal.md"
-  
-      ;;
-    "wf")
-      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
-  
-      ;;
-    "flow")
-      jrnl_path="${defaultVault}/1_Markdown/note_Knowledge/AcronymJournal.md"
-  
-      ;;
-    "default")
-      jrnl_path=$jrnlpath
-      
-      ;;
-    "*")
-      jrnl_path=$jrnlpath
-      
-      ;;
-  esac
+  local jrnl_path = $jrnlpath
+  jrnlpath=$jrnlTable[$1]
 
   if [ $# -gt 2 ];
   then 
