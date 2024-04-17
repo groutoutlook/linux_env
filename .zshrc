@@ -202,11 +202,13 @@ cst(){
   curl https://codestats.net/api/users/groutlloyd
   fi
 }
-
 alias j="jnl"
 alias J="jnl"
 export jrnlpath="${andstorage}/Note/MainJournal.md"
 export defaultVault="${andstorage}/Note"
+
+jnl(){
+typeset -A jrnlTable
 jrnlTable=(
   [1688]="${defaultVault}/1_Markdown/note_Items/1688Journal.md"
   [taobao]="${defaultVault}/1_Markdown/note_Items/TaobaoJournal.md"
@@ -237,13 +239,17 @@ jrnlTable=(
   [til]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/OtherKnowledgeJournal.md"
   [other]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/OtherKnowledgeJournal.md"
   [acc]="${defaultVault}/1_Markdown/note_software/0_LongJournal/AccountJournal.md"
-  )
-jnl(){
+)
   local final_string=""
   local time_date=$(date "+%F %r")
   local jrnl_path=$jrnlpath
-  jrnlpath=$jrnlTable[$1]
-
+  jrnl_path=$jrnlTable[$1]
+  if [[ -z jrnl_path  ]]; then
+    jrnl_path=$jrnlpath
+  else
+    jrnl_path=$jrnlTable[$1]
+  fi
+  
   if [ $# -gt 2 ];
   then 
     for arg in "${@:2}"
@@ -254,7 +260,7 @@ jnl(){
   else
     # echo "this opens nvim"
     echo "\n[${time_date}] " >> $jrnl_path
-    nvim $jrnl_path -+ -c "call feedkeys(zz)"
+    nvim $jrnl_path -c $ -c "startinsert!" # -c "call feedkeys(zz)" 
   fi 
 }
  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
