@@ -165,6 +165,44 @@ reloadProfile(){
   git -C $nvim_dir pull 
 
 }
+
+alias obs="os:"
+alias o="os:"
+os:(){
+  local query="" 
+	for arg in "$@"
+	do
+		query="${query}${arg}%20"
+	done
+ xdg-open "obsidian://omnisearch?query=${query}"
+}
+osj(){
+  xdg-open "obsidian://omnisearch?Journal"
+}
+alias gg="gos"
+gos(){
+	origin_query="https://www.google.com/search?q="
+	query=$origin_query
+	for arg in "$@"
+	do
+		query=$query+$arg
+	done
+	xdg-open $query #need w3m.
+}
+nvimconf(){
+  nvim /data/data/com.termux/files/home/.config/nvim/
+}
+
+cst(){
+  if [ $1 -ne 0 ];
+  then
+  xdg-open https://codestats.net/users/groutlloyd
+  
+  else
+  curl https://codestats.net/api/users/groutlloyd
+  fi
+}
+
 alias j="jnl"
 alias J="jnl"
 export jrnlpath="${andstorage}/Note/MainJournal.md"
@@ -219,43 +257,7 @@ jnl(){
     nvim $jrnl_path -+ -c "call feedkeys(zz)"
   fi 
 }
-alias obs="os:"
-alias o="os:"
-os:(){
-  local query="" 
-	for arg in "$@"
-	do
-		query="${query}${arg}%20"
-	done
- xdg-open "obsidian://omnisearch?query=${query}"
-}
-osj(){
-  xdg-open "obsidian://omnisearch?Journal"
-}
-alias gg="gos"
-gos(){
-	origin_query="https://www.google.com/search?q="
-	query=$origin_query
-	for arg in "$@"
-	do
-		query=$query+$arg
-	done
-	xdg-open $query #need w3m.
-}
-nvimconf(){
-  nvim /data/data/com.termux/files/home/.config/nvim/
-}
-
-cst(){
-  if [ $1 -ne 0 ];
-  then
-  xdg-open https://codestats.net/users/groutlloyd
-  
-  else
-  curl https://codestats.net/api/users/groutlloyd
-  fi
-}
-
+ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 PATH="/data/data/com.termux/files/home/perl5/bin${PATH:+:${PATH}}"; export PATH;
