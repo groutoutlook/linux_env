@@ -250,16 +250,12 @@ jrnlTable=(
     jrnl_path=$jrnlTable[$1]
   fi
   last=${@[-1]}
-  if [ $# -gt 2 ];
-  then 
+  if [ $# -gt 2 ]; then 
     for arg in "${@:2}"
 	  do
 		    final_string="${final_string}${arg} "
 	  done
     echo "\n[${time_date}] ${final_string}\n" >> $jrnl_path
-    if [ $last == "o" ]
-      obs $jrnl_path:t:r
-    fi
   else
     # echo "this opens nvim"
     echo "\n[${time_date}] " >> $jrnl_path
