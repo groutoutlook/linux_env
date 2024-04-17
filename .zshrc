@@ -257,7 +257,7 @@ jrnlTable=(
 		    final_string="${final_string}${arg} "
 	  done
     echo "\n[${time_date}] ${final_string}\n" >> $jrnl_path
-    if [ last == "o" ]
+    if [ $last == "o" ]
       xdg-open "obsidian://open?path=$jrnl_path"
     fi
   else
