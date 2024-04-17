@@ -249,7 +249,7 @@ jrnlTable=(
   else
     jrnl_path=$jrnlTable[$1]
   fi
-  
+  last=${@[-1]}
   if [ $# -gt 2 ];
   then 
     for arg in "${@:2}"
@@ -257,11 +257,15 @@ jrnlTable=(
 		    final_string="${final_string}${arg} "
 	  done
     echo "\n[${time_date}] ${final_string}\n" >> $jrnl_path
+    if [ last == "o" ]
+      xdg-open "obsidian://open?path=$jrnl_path"
+    fi
   else
     # echo "this opens nvim"
     echo "\n[${time_date}] " >> $jrnl_path
     nvim $jrnl_path -c $ -c "startinsert!" # -c "call feedkeys(zz)" 
   fi 
+
 }
  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
