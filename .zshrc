@@ -258,7 +258,7 @@ jrnlTable=(
 	  done
     echo "\n[${time_date}] ${final_string}\n" >> $jrnl_path
     if [ $last == "o" ]
-      xdg-open "obsidian://open?path=$jrnl_path"
+      obs $jrnl_path:t:r
     fi
   else
     # echo "this opens nvim"
