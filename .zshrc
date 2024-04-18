@@ -138,7 +138,7 @@ if [ $# -lt 1 ]; then
   reloadProfile
 elif [ $1 = "zsh" ]; then 
   echo "linux_env_dir"
-  git -C $linux_env_dir pull 
+  git -C $linux_env_dir puf 
   reloadProfile
 fi
 }
