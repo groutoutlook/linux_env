@@ -11,8 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-# "robbyrussell"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -73,7 +72,11 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # My Display export.
-export DISPLAY=:0
+# It shows error in wayland machine, better turn it off.
+# Another way is `unset DISPLAY`
+# https://unix.stackexchange.com/questions/202891/how-to-know-whether-wayland-or-x11-is-being-used
+# I install gdm on my fedora 40, seems like it worked.
+# export DISPLAY=:0
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
@@ -265,11 +268,20 @@ jrnlTable=(
 }
  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 PATH="/data/data/com.termux/files/home/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/data/data/com.termux/files/home/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/data/data/com.termux/files/home/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/data/data/com.termux/files/home/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/data/data/com.termux/files/home/perl5"; export PERL_MM_OPT;
 
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+alias cat="bat"
+alias cd="z"
 eval "$(zoxide init zsh)"
