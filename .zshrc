@@ -109,6 +109,7 @@ DISABLE_FZF_AUTO_COMPLETION="false";
 DISABLE_FZF_KEY_BINDINGS="false";
 export FZF_DEFAULT_COMMAND='fd';
 
+# INFO: PATH export.
 PATH="$HOME/go/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
