@@ -272,4 +272,7 @@ PERL_LOCAL_LIB_ROOT="/data/data/com.termux/files/home/perl5${PERL_LOCAL_LIB_ROOT
 PERL_MB_OPT="--install_base \"/data/data/com.termux/files/home/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/data/data/com.termux/files/home/perl5"; export PERL_MM_OPT;
 
+PATH="$PATH:$HOME/.config/emacs/bin"
+
+
 eval "$(zoxide init zsh)"
