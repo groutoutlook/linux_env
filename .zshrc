@@ -172,7 +172,7 @@ alias repro="reloadProfile"
 reloadProfile(){
   local nvim_dir="$HOME/.config/nvim"
   cp ~/linux_env/.zshrc ~/.zshrc && source ~/.zshrc && echo "success reloadProfile."
-
+cp ~/dotfiles/.gitconfig ~
   echo nvim_dir
   git -C $nvim_dir pull 
 
@@ -286,8 +286,10 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
+
+
 alias cat="bat"
 alias cd="z"
-
+export EDITOR=nvim
 
 eval "$(zoxide init zsh)"
