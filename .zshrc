@@ -61,7 +61,9 @@ ZSH_THEME="robbyrussell"
 
  # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#as-an-oh-my-zsh-custom-plugin
 plugins=(
+zsh-vi-mode
 aliases 
 fzf 
 )
