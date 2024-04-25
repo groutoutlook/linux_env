@@ -283,5 +283,6 @@ function yy() {
 
 alias cat="bat"
 alias cd="z"
+export EDITOR=nvim
 
 eval "$(zoxide init zsh)"
