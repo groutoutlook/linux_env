@@ -271,7 +271,17 @@ jrnlTable=(
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-alias cd="z"
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 alias cat="bat"
+alias cd="z"
 
 eval "$(zoxide init zsh)"
