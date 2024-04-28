@@ -213,6 +213,7 @@ cst(){
 }
 alias j="jnl"
 alias J="jnl"
+export andstorage="/storage/emulated/0"
 export jrnlpath="${andstorage}/Note/MainJournal.md"
 export defaultVault="${andstorage}/Note"
 
