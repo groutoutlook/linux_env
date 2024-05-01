@@ -109,7 +109,7 @@ alias pbpaste='xclip -selection clipboard -o'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #FZF config
-export FZF_BASE="/data/data/com.termux/files/usr/bin/fzf";
+export FZF_BASE="/usr/bin/fzf";
 DISABLE_FZF_AUTO_COMPLETION="false";
 DISABLE_FZF_KEY_BINDINGS="false";
 export FZF_DEFAULT_COMMAND='fd';
