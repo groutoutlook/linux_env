@@ -264,6 +264,8 @@ jrnlTable=(
   [til]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/OtherKnowledgeJournal.md"
   [other]="${defaultVault}/1_Markdown/note_algo_lang/0_LongJournal/OtherKnowledgeJournal.md"
   [acc]="${defaultVault}/1_Markdown/note_software/0_LongJournal/AccountJournal.md"
+  [web]="${defaultVault}/1_Markdown/note_software/0_LongJournal/WebJournal.md"
+  [os]="${defaultVault}/1_Markdown/note_software/0_LongJournal/OSJournal.md"
 )
   local final_string=""
   local time_date=$(date "+%F %r")
