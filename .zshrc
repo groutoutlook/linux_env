@@ -135,12 +135,7 @@ cd-(){
     cd -
   done
 }
-cd..(){
-  for i in {1..$1}
-  do
-    ..
-  done
-}
+
 alias :Q=":q"
 alias qqq=":q"
 :q(){
