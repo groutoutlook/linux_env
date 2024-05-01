@@ -159,10 +159,13 @@ elif [ $1 = "zsh" ]; then
   reloadProfile
 fi
 }
+
 alias :v="nvimhere"
 alias :V="nvimhere"
 alias :vl="nvimhere last"
 alias :vs="nvimhere ls"
+alias :Vl="nvimhere last"
+alias :Vs="nvimhere ls"
 nvimhere(){
   if [ $# -lt 1 ]; then
     nvim .
@@ -170,9 +173,15 @@ nvimhere(){
     nvim -c "lua require('resession').load 'Last Session'"
   elif [ $1 = "ls" ]; then
     nvim -c "lua require('resession').load()"
+  else
+    nvim $@
   fi
 }
-#reload Profile
+
+alias :e="espanso"
+alias :E="espanso"
+
+# reload Profile
 alias repro="reloadProfile"
 reloadProfile(){
   local nvim_dir="$HOME/.config/nvim"
@@ -180,7 +189,6 @@ reloadProfile(){
   cp ~/dotfiles/.gitconfig ~ && echo ".gitconfig reload"
   echo nvim_dir
   git -C $nvim_dir pull 
-
 }
 
 alias obs="os:"
