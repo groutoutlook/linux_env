@@ -299,6 +299,7 @@ function yy() {
 
 
 alias sdnf='sudo dnf '
+alias scoop='sudo dnf '
 alias cat="bat"
 alias cd="z"
 export EDITOR=nvim
