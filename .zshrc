@@ -64,7 +64,8 @@ ZSH_THEME="robbyrussell"
 # https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#as-an-oh-my-zsh-custom-plugin
 # git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
 plugins=(
-zsh-vi-mode
+# zsh-vi-mode
+sudo
 aliases 
 fzf 
 )
