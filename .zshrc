@@ -11,8 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-# "robbyrussell"
+ZSH_THEME="robbyrussell"
+# "powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -104,7 +104,7 @@ alias cls='clear'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #FZF config
 export FZF_BASE="/data/data/com.termux/files/usr/bin/fzf";
@@ -304,4 +304,5 @@ alias cat="bat"
 alias cd="z"
 export EDITOR=nvim
 
+eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
