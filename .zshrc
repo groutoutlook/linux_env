@@ -147,11 +147,13 @@ alias qqq=":q"
 alias :A=":a"
 alias :az=":a zsh"
 :a(){
+local dotfiles_dir="$HOME/dotfiles"
 local linux_env_dir="$HOME/linux_env"
 if [ $# -lt 1 ]; then
   reloadProfile
 elif [ $1 = "zsh" ]; then 
   echo "linux_env_dir"
+  git -C $dotfiles_dir pull -f
   git -C $linux_env_dir pull -f 
   reloadProfile
 fi
@@ -287,7 +289,7 @@ jrnlTable=(
   fi 
 
 }
- typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function yy() {
