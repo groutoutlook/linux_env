@@ -189,6 +189,7 @@ reloadProfile(){
 
 alias obs="os:"
 alias o="os:"
+alias :o="os:"
 os:(){
   local query="" 
 	for arg in "$@"
