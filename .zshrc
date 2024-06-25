@@ -104,7 +104,7 @@ alias cls='clear'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #FZF config
 export FZF_BASE="/data/data/com.termux/files/usr/bin/fzf";
@@ -306,5 +306,5 @@ alias cat="bat"
 alias cd="z"
 export EDITOR=nvim
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
