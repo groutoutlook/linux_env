@@ -59,7 +59,7 @@ ZSH_THEME="robbyrussell"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
-
+setopt NO_HIST_VERIFY
  # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#as-an-oh-my-zsh-custom-plugin
@@ -201,9 +201,10 @@ os:(){
 osj(){
   xdg-open "obsidian://omnisearch?Journal"
 }
-alias gg="gos"
-gos(){
-	origin_query="https://www.google.com/search?q="
+# export CFLAGS="-Wno-incompatible-function-pointer-types"
+alias g="DuckDuckGo"
+DuckDuckGo(){
+	origin_query="https://www.duckduckgo.com/?q="
 	query=$origin_query
 	for arg in "$@"
 	do
