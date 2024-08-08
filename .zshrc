@@ -212,9 +212,7 @@ DuckDuckGo(){
 	done
 	xdg-open $query #need w3m.
 }
-nvimconf(){
-  nvim /data/data/com.termux/files/home/.config/nvim/
-}
+
 
 cst(){
   if [ $1 -ne 0 ];
@@ -225,74 +223,14 @@ cst(){
   curl https://codestats.net/api/users/groutlloyd
   fi
 }
-alias j="jnl"
-alias J="jnl"
+alias j="jrnl"
+alias J="jrnl"
 export andstorage="/storage/emulated/0"
 export jrnlpath="${andstorage}/Note/MainJournal.md"
 export defaultVault="${andstorage}/Note"
 
-jnl(){
-typeset -A jrnlTable
-jrnlTable=(
-  [1688]="${defaultVault}/note_Items/1688Journal.md"
-  [taobao]="${defaultVault}/note_Items/TaobaoJournal.md"
-  [asset]="${defaultVault}/note_Items/AssetJournal.md"
-  [place]="${defaultVault}/note_Knowledge/note_Places/PlacesJournal.md"
-  [work]="${defaultVault}/note_Business/WorkJournal.md"
-  [lang]="${defaultVault}/note_algo_lang/0_LongJournal/LangJournal.md"
-  [prog]="${defaultVault}/note_algo_lang/0_LongJournal/ProgrammingJournal.md"
-  [comp]="${defaultVault}/note_Embedded/ComponentJournal.md"
-  [kicad]="${defaultVault}/note_Embedded/note_EDA/EDAJournal.md"
-  [eda]="${defaultVault}/note_Embedded/note_EDA/EDAJournal.md"
-  [hw]="${defaultVault}/note_Embedded/HardwareJournal.md"
-  [hard]="${defaultVault}/note_Embedded/HardwareJournal.md"
-  [sw]="${defaultVault}/note_software/0_LongJournal/SoftwareJournal.md"
-  [soft]="${defaultVault}/note_software/SoftwareJournal.md"
-  [acro]="${defaultVault}/note_Knowledge/AcronymJournal.md"
-  [vocab]="${defaultVault}/note_Knowledge/VocabJournal.md"
-  [flow]="${defaultVault}/note_Business/WorkflowJournal.md"
-  [wf]="${defaultVault}/note_Business/WorkflowJournal.md"
-  [workflow]="${defaultVault}/note_Business/WorkflowJournal.md"
-  [phr]="${defaultVault}/note_Knowledge/PhraseJournal.md"
-  [phrase]="${defaultVault}/note_Knowledge/PhraseJournal.md"
-  [ev]="${defaultVault}/note_Knowledge/EventJournal.md"
-  [event]="${defaultVault}/note_Knowledge/EventJournal.md"
-  [math]="${defaultVault}/note_algo_lang/0_LongJournal/STEMJournal.md"
-  [physic]="${defaultVault}/note_algo_lang/0_LongJournal/STEMJournal.md"
-  [stem]="${defaultVault}/note_algo_lang/0_LongJournal/STEMJournal.md"
-  [til]="${defaultVault}/note_algo_lang/0_LongJournal/OtherKnowledgeJournal.md"
-  [other]="${defaultVault}/note_algo_lang/0_LongJournal/OtherKnowledgeJournal.md"
-  [acc]="${defaultVault}/note_software/0_LongJournal/AccountJournal.md"
-  [web]="${defaultVault}/note_software/0_LongJournal/WebJournal.md"
-  [os]="${defaultVault}/note_software/0_LongJournal/OSJournal.md"
-)
-  local final_string=""
-  local time_date=$(date "+%F %r")
-  local jrnl_path=$jrnlpath
-  jrnl_path=$jrnlTable[$1]
-  if [[ -z jrnl_path  ]]; then
-    jrnl_path=$jrnlpath
-  else
-    jrnl_path=$jrnlTable[$1]
-  fi
-  last=${@[-1]}
-  if [ $# -gt 2 ]; then 
-    for arg in "${@:2}"
-	  do
-		    final_string="${final_string}${arg} "
-	  done
-    echo "\n[${time_date}] ${final_string}\n" >> $jrnl_path
-  else
-    # echo "this opens nvim"
-    echo "\n[${time_date}] " >> $jrnl_path
-    nvim $jrnl_path -c $ -c "startinsert!" # -c "call feedkeys(zz)" 
-  fi 
-
-}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
 
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"

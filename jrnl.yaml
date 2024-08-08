@@ -1,0 +1,221 @@
+colors:
+  body: none
+  date: black
+  tags: yellow
+  title: green
+default_hour: 9
+default_minute: 0
+editor: nvim -c $ -c startinsert!
+encrypt: false
+highlight: true
+indent_character: ""
+journals:
+  :1688:
+    journal: /storage/emulated/0/Note/note_Items/1688Journal.md
+  acc:
+    journal: /storage/emulated/0/Note/note_Knowledge/secret/AccountJournal.md
+  acro:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/AcronymJournal.md
+  cad3d:
+    journal: /storage/emulated/0/Note/note_IDEAndTools/Asset/CAD/CADJournal.md
+  draw:
+    journal: /storage/emulated/0/Note/note_IDEAndTools/Asset/Art/ArtToolsJournal.md
+  blend:
+    journal: /storage/emulated/0/Note/note_IDEAndTools/Asset/Art/ArtToolsJournal.md
+  art:
+    journal: /storage/emulated/0/Note/note_IDEAndTools/Asset/Art/ArtToolsJournal.md
+  asset:
+    journal: /storage/emulated/0/Note/note_Items/AssetJournal.md
+  blog:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/ReadAndListenJournal.md
+  book:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/ReadAndListenJournal.md
+  cad:
+    journal: /storage/emulated/0/Note/note_IDEAndTools/Asset/CAD/CADJournal.md
+  come:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/WholesomeJournal.md
+  inte:
+    journal: /storage/emulated/0/Note/note_Embedded/ProtocolJournal.md
+  prot:
+    journal: /storage/emulated/0/Note/note_Embedded/ProtocolJournal.md
+  bus:
+    journal: /storage/emulated/0/Note/note_Embedded/ProtocolJournal.md
+  wire:
+    journal: /storage/emulated/0/Note/note_Embedded/ProtocolJournal.md
+  comp:
+    journal: /storage/emulated/0/Note/note_Embedded/ComponentJournal.md
+  default:
+    journal: /storage/emulated/0/Note/MainJournal.md
+  eco:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/EconomyJournal.md
+  econ:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/EconomyJournal.md
+  ecad:
+    journal: /storage/emulated/0/Note/note_Embedded/note_EDA/EDAJournal.md
+  eda:
+    journal: /storage/emulated/0/Note/note_Embedded/note_EDA/EDAJournal.md
+  edit:
+    journal: /storage/emulated/0/Note/note_IDEAndTools/Asset/Art/ArtToolsJournal.md
+  emb:
+    journal: /storage/emulated/0/Note/note_Embedded/FirmwareJournal.md
+  embed:
+    journal: /storage/emulated/0/Note/note_Embedded/FirmwareJournal.md
+  ev:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/EventJournal.md
+  event:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/EventJournal.md
+  firm:
+    journal: /storage/emulated/0/Note/note_Embedded/FirmwareJournal.md
+  fw:
+    journal: /storage/emulated/0/Note/note_Embedded/FirmwareJournal.md
+  hard:
+    journal: /storage/emulated/0/Note/note_Embedded/HardwareJournal.md
+  hh:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/WholesomeJournal.md
+  hw:
+    journal: /storage/emulated/0/Note/note_Embedded/HardwareJournal.md
+  item:
+    journal: /storage/emulated/0/Note/note_Items/OtherItemsJournal.md
+  kicad:
+    journal: /storage/emulated/0/Note/note_Embedded/note_EDA/EDAJournal.md
+  lang:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/LangJournal.md
+  tip:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/LifeHackJournal.md
+  ltip:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/LifeHackJournal.md
+  lhack:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/LifeHackJournal.md
+  hack:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/LifeHackJournal.md
+  psy:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/LifeJournal.md
+  life:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/LifeJournal.md
+  linux:
+    journal: /storage/emulated/0/Note/note_software/journal/OSJournal.md
+  lowsw:
+    journal: /storage/emulated/0/Note/note_Embedded/FirmwareJournal.md
+  math:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/STEMJournal.md
+  mech:
+    journal: /storage/emulated/0/Note/note_IDEAndTools/Asset/CAD/CADJournal.md
+  media:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/NewsJournal.md
+  meme:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/WholesomeJournal.md
+  new:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/NewsJournal.md
+  news:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/NewsJournal.md
+  os:
+    journal: /storage/emulated/0/Note/note_software/journal/OSJournal.md
+  other:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/OtherKnowledgeJournal.md
+  people:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/PeopleJournal.md
+  per:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/PeopleJournal.md
+  person:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/PeopleJournal.md
+  ety:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/PhraseJournal.md
+  etym:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/PhraseJournal.md
+  phr:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/PhraseJournal.md
+  phrase:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/PhraseJournal.md
+  qt:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/QuoteJournal.md
+  quote:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/QuoteJournal.md
+  physic:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/STEMJournal.md
+  place:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/PlacesJournal.md
+  prog:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/ProgrammingJournal.md
+  read:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/ReadAndListenJournal.md
+  soft:
+    journal: /storage/emulated/0/Note/note_software/journal/SoftwareJournal.md
+  stem:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/STEMJournal.md
+  stm:
+    journal: /storage/emulated/0/Note/note_Embedded/FirmwareJournal.md
+  sw:
+    journal: /storage/emulated/0/Note/note_software/journal/SoftwareJournal.md
+  taobao:
+    journal: /storage/emulated/0/Note/note_Items/TaobaoJournal.md
+  til:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/OtherKnowledgeJournal.md
+  mus:
+    journal: /storage/emulated/0/Note/note_entertainment/note_discography/MusicJournal.md
+  music:
+    journal: /storage/emulated/0/Note/note_entertainment/note_discography/MusicJournal.md
+  vid:
+    journal: /storage/emulated/0/Note/note_entertainment/note_discography/VideoJournal.md
+  video:
+    journal: /storage/emulated/0/Note/note_entertainment/note_discography/VideoJournal.md
+  vocab:
+    journal: /storage/emulated/0/Note/note_Knowledge/journal/VocabJournal.md
+  web:
+    journal: /storage/emulated/0/Note/note_software/journal/WebJournal.md
+  windows:
+    journal: /storage/emulated/0/Note/note_software/journal/OSJournal.md
+  work:
+    journal: /storage/emulated/0/Note/note_Business/WorkJournal.md
+  wf:
+    journal: /storage/emulated/0/Note/note_Business/WorkflowJournal.md
+  style:
+    journal: /storage/emulated/0/Note/note_Business/WorkflowJournal.md
+  myrule:
+    journal: /storage/emulated/0/Note/note_Business/WorkflowJournal.md
+  rule:
+    journal: /storage/emulated/0/Note/note_Business/WorkflowJournal.md
+  workflow:
+    journal: /storage/emulated/0/Note/note_Business/WorkflowJournal.md
+  freecad:
+    journal: /storage/emulated/0/Note/note_IDEAndTools/Asset/CAD/CADJournal.md
+  fcad:
+    journal: /storage/emulated/0/Note/note_IDEAndTools/Asset/CAD/CADJournal.md
+  module:
+    journal: /storage/emulated/0/Note/note_Embedded/ChipsetJournal.md
+  ic:
+    journal: /storage/emulated/0/Note/note_Embedded/ChipsetJournal.md
+  chip:
+    journal: /storage/emulated/0/Note/note_Embedded/ChipsetJournal.md
+  soc:
+    journal: /storage/emulated/0/Note/note_Embedded/ChipsetJournal.md
+  html:
+    journal: /storage/emulated/0/Note/note_os_web/SDK/WebProgJournal.md
+  wasm:
+    journal: /storage/emulated/0/Note/note_os_web/SDK/WebProgJournal.md
+  wprog:
+    journal: /storage/emulated/0/Note/note_os_web/SDK/WebProgJournal.md
+  wpro:
+    journal: /storage/emulated/0/Note/note_os_web/SDK/WebProgJournal.md
+  pcb:
+    journal: /storage/emulated/0/Note/note_Embedded/PCB_Standard/PCBJournal.md
+  viap:
+    journal: /storage/emulated/0/Note/note_Embedded/PCB_Standard/PCBJournal.md
+  pcba:
+    journal: /storage/emulated/0/Note/note_Embedded/PCB_Standard/PCBJournal.md
+  csci:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/CompSciJournal.md
+  cs:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/CompSciJournal.md
+  ui:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/GraphicUIJournal.md
+  gui:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/GraphicUIJournal.md
+  graph:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/GraphicUIJournal.md
+  grap:
+    journal: /storage/emulated/0/Note/note_algo_lang/journal/GraphicUIJournal.md
+linewrap: 2000
+tagsymbols: "#@"
+template: false
+timeformat: "%F %r"
+version: v4.1
