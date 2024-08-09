@@ -14,6 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 # "powerlevel10k/powerlevel10k"
 
+setopt nobanghist
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -243,7 +244,10 @@ function yy() {
 
 alias cat="bat"
 alias cd="z"
+alias ls="eza"
+alias lsd="eza"
 export EDITOR=nvim
 
+alias js="just"
 # eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
