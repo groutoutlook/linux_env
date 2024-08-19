@@ -192,7 +192,7 @@ source $HOME/.zshrc
 if [[ -e "$HOME/.gitconfig" ]]; then
   echo ".gitconfig linked."
 else
-  ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+  ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig -f
   echo "Link .gitconfig"
 fi
   # echo nvim_dir
