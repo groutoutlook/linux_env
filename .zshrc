@@ -180,23 +180,22 @@ alias :E="espanso"
 # reload Profile
 alias repro="reloadProfile"
 reloadProfile(){
-
   local nvim_dir="$HOME/.config/nvim"
   local zshfile="$HOME/.zshrc"
-if [ -a $zshfile]; then
-	ln -s $HOME/linux_env/.zshrc $HOME/.zshrc
-	echo "Link .zshrc"
+if [[ -e $zshfile ]]; then
+  echo "Symlink-ed"
 else
-        echo "Symlink-ed"
+	ln -s $HOME/linux_env/.zshrc $HOME/.zshrc -f
+	echo "Link .zshrc"
 fi
-source $HOME/.zshrc && echo "success reloadProfile."
-if [ -a "$HOME/.gitconfig"]; then
+source $HOME/.zshrc
+if [[ -e "$HOME/.gitconfig" ]]; then
+  echo ".gitconfig linked."
+else
   ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
   echo "Link .gitconfig"
-else
-   echo ".gitconfig linked."
 fi
-  echo nvim_dir
+  # echo nvim_dir
   git -C $nvim_dir pull 
 }
 
