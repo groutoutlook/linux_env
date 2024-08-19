@@ -185,11 +185,17 @@ reloadProfile(){
   local zshfile="$HOME/.zshrc"
 if [ -a $zshfile]; then
 	ln -s $HOME/linux_env/.zshrc $HOME/.zshrc
+	echo "Link .zshrc"
 else
         echo "Symlink-ed"
 fi
 source $HOME/.zshrc && echo "success reloadProfile."
-  cp $HOME/dotfiles/.gitconfig $HOME && echo ".gitconfig reload"
+if [ -a "$HOME/.gitconfig"]; then
+  ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+  echo "Link .gitconfig"
+else
+   echo ".gitconfig linked."
+fi
   echo nvim_dir
   git -C $nvim_dir pull 
 }
