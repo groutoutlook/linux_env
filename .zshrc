@@ -182,8 +182,14 @@ alias repro="reloadProfile"
 reloadProfile(){
 
   local nvim_dir="$HOME/.config/nvim"
-  cp ~/linux_env/.zshrc ~/.zshrc && source ~/.zshrc && echo "success reloadProfile."
-  cp ~/dotfiles/.gitconfig ~ && echo ".gitconfig reload"
+  local zshfile="$HOME/.zshrc"
+if [ -a $zshfile]; then
+	ln -s $HOME/linux_env/.zshrc $HOME/.zshrc
+else
+        echo "Symlink-ed"
+fi
+source $HOME/.zshrc && echo "success reloadProfile."
+  cp $HOME/dotfiles/.gitconfig $HOME && echo ".gitconfig reload"
   echo nvim_dir
   git -C $nvim_dir pull 
 }
@@ -213,6 +219,30 @@ DuckDuckGo(){
 	done
 	xdg-open $query #need w3m.
 }
+
+
+search-command-line() {
+  # If line is empty, get the last run command from history
+  [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
+
+  # Save beginning space
+  local WHITESPACE=""
+  if [[ ${LBUFFER:0:1} = " " ]]; then
+    WHITESPACE=" "
+    LBUFFER="${LBUFFER:1}"
+  fi
+
+  LBUFFER="g ${WHITESPACE}${LBUFFER}"
+  zle && zle redisplay 
+  zle .accept-line
+}
+
+
+zle -N search-command-line
+
+# Defined shortcut keys: `^s`
+bindkey -M emacs '^s' search-command-line
+
 
 
 cst(){
