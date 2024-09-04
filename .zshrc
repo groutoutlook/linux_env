@@ -168,7 +168,7 @@ nvimhere(){
   elif [ $1 = "last" ]; then
     nvim -c "lua require('resession').load 'Last Session'"
   elif [ $1 = "ls" ]; then
-    nvim -c "lua require('resession').load()"
+    nvim -c "lua require('resession').load($2)"
   else
     nvim $@
   fi
@@ -265,7 +265,12 @@ export andstorage="/storage/emulated/0"
 export jrnlpath="${andstorage}/Note/MainJournal.md"
 export defaultVault="${andstorage}/Note"
 
-
+# INFO: mpv playlist from jrnl files
+jmpv(){
+rm $HOME/temp_playlist.txt
+j music -4 | rg "http.*" -o | cut -d ")" -f1 >> $HOME/temp_playlist.txt
+mpv --playlist=$HOME/temp_playlist.txt
+}
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function yy() {
