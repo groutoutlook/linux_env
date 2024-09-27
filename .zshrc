@@ -239,6 +239,12 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+# INFO: rg on Journal
+function rgj(){
+  rg $@ -g "*Journal.md" $(zoxide query Vault)
+}
+
+# HACK: lazily alias those binaries
 alias cat="bat"
 alias cd="z"
 alias ls="eza"
