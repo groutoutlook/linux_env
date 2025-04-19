@@ -241,7 +241,7 @@ function yy() {
 
 # INFO: rg on Journal
 function rgj(){
-  rg $@ -g "*Journal.md" $(zoxide query Vault)
+  rg $@ -g "*Journal.md" $(zoxide query obs)
 }
 
 # HACK: lazily alias those binaries
@@ -254,3 +254,4 @@ export EDITOR=nvim
 alias js="just"
 # eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config"
